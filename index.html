@@ -23,8 +23,11 @@ background:#fffaf5;
 
 .hero{
 background:
-linear-gradient(rgba(255,248,240,.70),rgba(255,248,240,.75)),
-url("https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1800&q=80");
+linear-gradient(
+rgba(255,248,240,.55),
+rgba(255,248,240,.70)
+),
+url("https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=1800&q=80");
 background-size:cover;
 background-position:center;
 padding:80px 0 120px;
@@ -206,7 +209,74 @@ text-align:center;
 color:white;
 font-size:1rem;
 }
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(10px);
+z-index:1000;
+box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
 
+.nav-container{
+max-width:1200px;
+margin:auto;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.nav-logo{
+font-size:2rem;
+font-weight:900;
+color:#0f2747;
+}
+
+.nav-logo span{
+color:#ff7a00;
+}
+
+.nav-menu{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+.nav-menu a{
+text-decoration:none;
+color:#0f2747;
+font-weight:600;
+}
+
+.nav-buttons{
+display:flex;
+gap:10px;
+}
+
+.login-btn{
+padding:10px 18px;
+border:2px solid #0f2747;
+border-radius:10px;
+text-decoration:none;
+color:#0f2747;
+font-weight:bold;
+}
+
+.register-btn{
+padding:10px 18px;
+background:#ff7a00;
+color:white;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.hero{
+padding-top:150px;
+}
 @media(max-width:768px){
 
 .logo{
@@ -232,7 +302,32 @@ width:100%;
 </head>
 
 <body>
+</style>
+</head>
 
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">Papia<span>Text</span></div>
+
+    <ul class="nav-menu">
+      <li><a href="#">Kas</a></li>
+      <li><a href="#">Kon e ta funshoná</a></li>
+      <li><a href="#">Servisionan</a></li>
+      <li><a href="#">Pa ken</a></li>
+      <li><a href="#">Tarifanan</a></li>
+      <li><a href="#">Kontakto</a></li>
+    </ul>
+
+    <div class="nav-buttons">
+      <a href="#" class="login-btn">Drenta</a>
+      <a href="#" class="register-btn">Registrá</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
 <section class="hero">
 
 <div class="container">
