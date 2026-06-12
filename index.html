@@ -1,15 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="pap">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>PapiaText</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
 
 body{
 font-family:'Poppins',sans-serif;
@@ -18,16 +27,22 @@ color:#0f2747;
 overflow-x:hidden;
 }
 
-a{text-decoration:none;}
+a{
+text-decoration:none;
+}
+
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar{
 position:fixed;
 top:0;
 left:0;
 width:100%;
+z-index:999;
 background:rgba(255,255,255,.95);
 backdrop-filter:blur(10px);
-z-index:999;
 box-shadow:0 2px 15px rgba(0,0,0,.08);
 }
 
@@ -36,13 +51,14 @@ max-width:1400px;
 margin:auto;
 padding:18px 30px;
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:space-between;
 }
 
 .logo-nav{
-font-size:2rem;
+font-size:2.2rem;
 font-weight:800;
+color:#0f2747;
 }
 
 .logo-nav span{
@@ -51,46 +67,57 @@ color:#ff7a00;
 
 .nav-menu{
 display:flex;
-gap:30px;
+gap:40px;
 list-style:none;
 }
 
 .nav-menu a{
 color:#0f2747;
 font-weight:600;
+transition:.3s;
+}
+
+.nav-menu a:hover{
+color:#ff7a00;
 }
 
 .nav-buttons{
 display:flex;
-gap:12px;
+gap:14px;
 }
 
 .btn-login{
-padding:10px 20px;
+padding:12px 24px;
 border:2px solid #0f2747;
-border-radius:10px;
+border-radius:12px;
 color:#0f2747;
 font-weight:700;
+background:white;
 }
 
 .btn-register{
-padding:10px 20px;
+padding:12px 24px;
+border-radius:12px;
 background:#ff7a00;
-border-radius:10px;
 color:white;
 font-weight:700;
 }
 
+/* =========================
+   HERO
+========================= */
+
 .hero{
-min-height:100vh;
-padding-top:120px;
+position:relative;
+min-height:720px;
+padding-top:110px;
 
 background:
 linear-gradient(
-rgba(255,255,255,.15),
-rgba(255,255,255,.25)
+rgba(255,255,255,.12),
+rgba(255,255,255,.20)
 ),
-url('papiatext-hero-curacao.png');
+url('images/papiatext-hero-curacao.png');
 
 background-size:cover;
 background-position:center;
@@ -108,15 +135,19 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 gap:60px;
+padding-top:50px;
 }
 
 .hero-left{
 flex:1;
+max-width:700px;
 }
 
 .logo-main{
-font-size:5.5rem;
+font-size:6rem;
 font-weight:800;
+line-height:1;
+color:#0f2747;
 margin-bottom:20px;
 }
 
@@ -125,57 +156,81 @@ color:#ff7a00;
 }
 
 .hero-title{
-font-size:3rem;
+font-size:3.2rem;
 font-weight:800;
-line-height:1.2;
+line-height:1.15;
 margin-bottom:20px;
+color:#0f2747;
 }
 
 .hero-slogan{
-font-size:1.5rem;
+font-size:1.8rem;
 font-weight:700;
 color:#ff7a00;
-margin-bottom:15px;
+margin-bottom:18px;
 }
 
 .hero-text{
-font-size:1.2rem;
+font-size:1.3rem;
+line-height:1.7;
 max-width:650px;
-margin-bottom:25px;
+margin-bottom:30px;
 }
 
 .btn-contact{
-display:inline-block;
+display:inline-flex;
+align-items:center;
+gap:12px;
 background:#ff7a00;
 color:white;
-padding:16px 30px;
-border-radius:12px;
+padding:18px 30px;
+border-radius:14px;
 font-weight:700;
+font-size:1.1rem;
+box-shadow:0 10px 25px rgba(255,122,0,.30);
+}
+
+.hero-right{
+display:flex;
+justify-content:flex-end;
+align-items:center;
+flex:1;
 }
 
 .info-card{
 background:rgba(255,255,255,.95);
-padding:35px;
-border-radius:25px;
-max-width:450px;
-box-shadow:0 15px 35px rgba(0,0,0,.12);
+padding:40px;
+border-radius:24px;
+width:430px;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
 }
 
 .info-card h3{
+font-size:2rem;
 color:#ff7a00;
 margin-bottom:15px;
 }
 
+.info-card p{
+font-size:1.2rem;
+line-height:1.8;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
 .services{
-padding:80px 0;
-background:#fff;
+background:#f8f8f8;
+padding:70px 0 50px;
 }
 
 .section-title{
 text-align:center;
 font-size:3rem;
 font-weight:800;
-margin-bottom:15px;
+color:#0f2747;
+margin-bottom:12px;
 }
 
 .section-line{
@@ -192,158 +247,254 @@ grid-template-columns:repeat(4,1fr);
 gap:25px;
 }
 
-.card{
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-text-align:center;
+<!DOCTYPE html>
+<html lang="pap">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PapiaText</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-.card-icon{
-font-size:3rem;
-margin-bottom:15px;
+html{
+scroll-behavior:smooth;
 }
 
-.pronto{
-padding:60px 0;
-background:#f8f8f8;
+body{
+font-family:'Poppins',sans-serif;
+background:#f7f7f7;
+color:#0f2747;
+overflow-x:hidden;
 }
 
-.pronto-box{
-background:white;
-padding:40px;
-border-radius:25px;
-text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
+a{
+text-decoration:none;
 }
 
-.footer-top{
-background:#08192e;
-padding:40px;
-text-align:center;
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:999;
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(10px);
+box-shadow:0 2px 15px rgba(0,0,0,.08);
 }
 
-.footer-top h3{
+.nav-container{
+max-width:1400px;
+margin:auto;
+padding:18px 30px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo-nav{
+font-size:2.2rem;
+font-weight:800;
+color:#0f2747;
+}
+
+.logo-nav span{
 color:#ff7a00;
-font-size:2rem;
-margin-bottom:10px;
-}
-
-.footer-top p{
-color:white;
-}
-
-footer{
-background:#04101d;
-color:white;
-text-align:center;
-padding:20px;
-}
-
-@media(max-width:900px){
-
-.hero-content{
-flex-direction:column;
-text-align:center;
-}
-
-.cards{
-grid-template-columns:1fr;
 }
 
 .nav-menu{
-display:none;
+display:flex;
+gap:40px;
+list-style:none;
 }
 
+.nav-menu a{
+color:#0f2747;
+font-weight:600;
+transition:.3s;
 }
-</style>
 
-</head>
+.nav-menu a:hover{
+color:#ff7a00;
+}
 
-<body>
+.nav-buttons{
+display:flex;
+gap:14px;
+}
 
-<nav class="navbar">
+.btn-login{
+padding:12px 24px;
+border:2px solid #0f2747;
+border-radius:12px;
+color:#0f2747;
+font-weight:700;
+background:white;
+}
 
-<div class="nav-container">
+.btn-register{
+padding:12px 24px;
+border-radius:12px;
+background:#ff7a00;
+color:white;
+font-weight:700;
+}
 
-<div class="logo-nav">
-Papia<span>Text</span>
-</div>
+/* =========================
+   HERO
+========================= */
 
-<ul class="nav-menu">
-<li><a href="#">Kas</a></li>
-<li><a href="#">Kon e ta funshoná</a></li>
-<li><a href="#">Servisionan</a></li>
-<li><a href="#">Pa ken</a></li>
-<li><a href="#">Tarifanan</a></li>
-<li><a href="#">Kontakto</a></li>
-</ul>
+.hero{
+position:relative;
+min-height:720px;
+padding-top:110px;
 
-<div class="nav-buttons">
-<a href="#" class="btn-login">Drenta</a>
-<a href="#" class="btn-register">Registrá</a>
-</div>
+background:
+linear-gradient(
+rgba(255,255,255,.12),
+rgba(255,255,255,.20)
+),
+url('images/papiatext-hero-curacao.png');
 
-</div>
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
 
-</nav>
+.container{
+max-width:1400px;
+margin:auto;
+padding:0 40px;
+}
 
-<section class="hero">
+.hero-content{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:60px;
+padding-top:50px;
+}
 
-<div class="container">
+.hero-left{
+flex:1;
+max-width:700px;
+}
 
-<div class="hero-content">
+.logo-main{
+font-size:6rem;
+font-weight:800;
+line-height:1;
+color:#0f2747;
+margin-bottom:20px;
+}
 
-<div class="hero-left">
+.logo-main span{
+color:#ff7a00;
+}
 
-<h1 class="logo-main">
-Papia<span>Text</span>
-</h1>
+.hero-title{
+font-size:3.2rem;
+font-weight:800;
+line-height:1.15;
+margin-bottom:20px;
+color:#0f2747;
+}
 
-<h2 class="hero-title">
-Konvertí audio i video na teksto den Papiamentu.
-</h2>
+.hero-slogan{
+font-size:1.8rem;
+font-weight:700;
+color:#ff7a00;
+margin-bottom:18px;
+}
 
-<p class="hero-slogan">
-Bo palabra. Nos teknologia.
-</p>
+.hero-text{
+font-size:1.3rem;
+line-height:1.7;
+max-width:650px;
+margin-bottom:30px;
+}
 
-<p class="hero-text">
-PapiaText ta un plataforma ku ta konvertí audio i video na teksto den Papiamentu di un manera rápido, presis i simpel.
-</p>
+.btn-contact{
+display:inline-flex;
+align-items:center;
+gap:12px;
+background:#ff7a00;
+color:white;
+padding:18px 30px;
+border-radius:14px;
+font-weight:700;
+font-size:1.1rem;
+box-shadow:0 10px 25px rgba(255,122,0,.30);
+}
 
-<a href="mailto:info@papiatext.com" class="btn-contact">
-Tuma kontakto ku nos
-</a>
+.hero-right{
+display:flex;
+justify-content:flex-end;
+align-items:center;
+flex:1;
+}
 
-</div>
+.info-card{
+background:rgba(255,255,255,.95);
+padding:40px;
+border-radius:24px;
+width:430px;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
 
-<div class="hero-right">
+.info-card h3{
+font-size:2rem;
+color:#ff7a00;
+margin-bottom:15px;
+}
 
-<div class="info-card">
+.info-card p{
+font-size:1.2rem;
+line-height:1.8;
+}
 
-<h3>
-Desaroyá pa VeeLady's Entertainment
-</h3>
+/* =========================
+   SERVICES
+========================= */
 
-<p>
-Papiamentu. Teknologia. Inovashon.
-</p>
+.services{
+background:#f8f8f8;
+padding:70px 0 50px;
+}
 
-<p style="margin-top:12px;">
-Kreá spesialmente pa audio, video i karaoke den Papiamentu.
-</p>
+.section-title{
+text-align:center;
+font-size:3rem;
+font-weight:800;
+color:#0f2747;
+margin-bottom:12px;
+}
 
-</div>
+.section-line{
+width:70px;
+height:5px;
+background:#ff7a00;
+margin:0 auto 50px;
+border-radius:50px;
+}
 
-</div>
-
-</div>
-
-</div>
-
-</section>
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
 
 <section class="services">
 
@@ -393,13 +544,21 @@ Nos Servisionan
 
 <div class="pronto-box">
 
-<h2 style="color:#ff7a00;margin-bottom:15px;">
-🚀 Pronto Disponibel
+<div class="pronto-icon">
+🚀
+</div>
+
+<div class="pronto-text">
+
+<h2>
+Pronto Disponibel
 </h2>
 
 <p>
 Subí bo audio òf video pa konvertí esaki na teksto den Papiamentu.
 </p>
+
+</div>
 
 </div>
 
