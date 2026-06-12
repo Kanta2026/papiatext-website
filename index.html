@@ -169,6 +169,10 @@ color:#ff7a00;
 margin-bottom:15px;
 }
 
+/* =========================
+   SERVICES
+========================= */
+
 .services{
 padding:50px 0 60px;
 background:transparent;
@@ -186,7 +190,7 @@ margin-bottom:10px;
 width:80px;
 height:5px;
 background:#ff7a00;
-margin:0 auto 40px;
+margin:0 auto 50px;
 border-radius:50px;
 }
 
@@ -194,15 +198,16 @@ border-radius:50px;
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:25px;
-margin-bottom:50px;
+margin-bottom:20px;
 }
 
 .card{
 background:white;
-padding:25px;
+padding:20px;
 border-radius:20px;
 text-align:center;
 box-shadow:0 10px 25px rgba(0,0,0,.08);
+min-height:240px;
 transition:.3s;
 }
 
@@ -216,7 +221,7 @@ margin-bottom:15px;
 }
 
 .card h3{
-font-size:1.7rem;
+font-size:1.6rem;
 margin-bottom:10px;
 color:#0f2747;
 }
@@ -226,23 +231,41 @@ font-size:1.05rem;
 line-height:1.6;
 }
 
-.coming-soon{
+/* =========================
+   PRONTO DISPONIBEL
+========================= */
+
+.pronto{
+padding:10px 0 40px;
+background:transparent;
+}
+
+.pronto-box{
+max-width:900px;
+margin:0 auto;
 background:#0f2747;
 padding:35px;
 border-radius:24px;
 text-align:center;
 color:white;
+box-shadow:0 15px 35px rgba(0,0,0,.15);
 }
 
-.coming-soon h2{
-color:#ff7a00;
+.pronto-box h2{
 font-size:2rem;
+color:#ff7a00;
 margin-bottom:12px;
 }
 
-.coming-soon p{
+.pronto-box p{
 font-size:1.15rem;
+line-height:1.7;
+color:white;
 }
+
+/* =========================
+   FOOTER TOP
+========================= */
 
 .footer-top{
 background:#08192e;
@@ -252,13 +275,26 @@ text-align:center;
 
 .footer-top h3{
 color:#ff7a00;
-font-size:2.6rem;
+font-size:2.5rem;
 margin-bottom:15px;
 }
 
 .footer-top p{
 color:white;
 font-size:1.2rem;
+line-height:1.7;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+background:#04101d;
+color:white;
+text-align:center;
+padding:25px;
+font-size:1rem;
 }
 
 @media(max-width:900px){
