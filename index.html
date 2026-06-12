@@ -22,13 +22,9 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Poppins',sans-serif;
-background:#f7f7f7;
+background:#fff;
 color:#0f2747;
 overflow-x:hidden;
-}
-
-a{
-text-decoration:none;
 }
 
 /* =========================
@@ -43,20 +39,20 @@ width:100%;
 z-index:999;
 background:rgba(255,255,255,.95);
 backdrop-filter:blur(10px);
-box-shadow:0 2px 15px rgba(0,0,0,.08);
+box-shadow:0 4px 20px rgba(0,0,0,.08);
 }
 
 .nav-container{
-max-width:1400px;
+max-width:1300px;
 margin:auto;
-padding:18px 30px;
+padding:16px 25px;
 display:flex;
-align-items:center;
 justify-content:space-between;
+align-items:center;
 }
 
 .logo-nav{
-font-size:2.2rem;
+font-size:2rem;
 font-weight:800;
 color:#0f2747;
 }
@@ -67,13 +63,14 @@ color:#ff7a00;
 
 .nav-menu{
 display:flex;
-gap:40px;
+gap:28px;
 list-style:none;
 }
 
 .nav-menu a{
-color:#0f2747;
+text-decoration:none;
 font-weight:600;
+color:#0f2747;
 transition:.3s;
 }
 
@@ -83,24 +80,25 @@ color:#ff7a00;
 
 .nav-buttons{
 display:flex;
-gap:14px;
+gap:12px;
 }
 
 .btn-login{
-padding:12px 24px;
+padding:10px 18px;
 border:2px solid #0f2747;
-border-radius:12px;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
 color:#0f2747;
-font-weight:700;
-background:white;
 }
 
 .btn-register{
-padding:12px 24px;
-border-radius:12px;
+padding:10px 18px;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
 background:#ff7a00;
 color:white;
-font-weight:700;
 }
 
 /* =========================
@@ -108,47 +106,52 @@ font-weight:700;
 ========================= */
 
 .hero{
+min-height:100vh;
+display:flex;
+align-items:center;
 position:relative;
-min-height:720px;
-padding-top:110px;
+padding-top:100px;
 
 background:
 linear-gradient(
-rgba(255,255,255,.12),
-rgba(255,255,255,.20)
+rgba(255,248,240,.65),
+rgba(255,248,240,.75)
 ),
-url('images/papiatext-hero-curacao.png');
+url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=2000&q=80');
 
 background-size:cover;
 background-position:center;
-background-repeat:no-repeat;
 }
 
 .container{
-max-width:1400px;
+max-width:1300px;
 margin:auto;
-padding:0 40px;
+padding:0 25px;
 }
 
 .hero-content{
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:space-between;
 gap:60px;
-padding-top:50px;
 }
 
 .hero-left{
 flex:1;
-max-width:700px;
+}
+
+.hero-right{
+flex:1;
+display:flex;
+justify-content:center;
 }
 
 .logo-main{
-font-size:6rem;
+font-size:5.5rem;
 font-weight:800;
 line-height:1;
-color:#0f2747;
 margin-bottom:20px;
+color:#0f2747;
 }
 
 .logo-main span{
@@ -160,309 +163,69 @@ font-size:3.2rem;
 font-weight:800;
 line-height:1.15;
 margin-bottom:20px;
-color:#0f2747;
+max-width:700px;
 }
 
 .hero-slogan{
-font-size:1.8rem;
+font-size:1.5rem;
 font-weight:700;
 color:#ff7a00;
-margin-bottom:18px;
+margin-bottom:20px;
 }
 
 .hero-text{
-font-size:1.3rem;
-line-height:1.7;
+font-size:1.15rem;
 max-width:650px;
+line-height:1.8;
 margin-bottom:30px;
 }
 
 .btn-contact{
-display:inline-flex;
-align-items:center;
-gap:12px;
+display:inline-block;
+padding:16px 30px;
 background:#ff7a00;
 color:white;
-padding:18px 30px;
-border-radius:14px;
+text-decoration:none;
 font-weight:700;
-font-size:1.1rem;
+border-radius:14px;
 box-shadow:0 10px 25px rgba(255,122,0,.30);
-}
-
-.hero-right{
-display:flex;
-justify-content:flex-end;
-align-items:center;
-flex:1;
 }
 
 .info-card{
 background:rgba(255,255,255,.95);
 padding:40px;
-border-radius:24px;
-width:430px;
-box-shadow:0 15px 40px rgba(0,0,0,.15);
+border-radius:28px;
+box-shadow:0 15px 40px rgba(0,0,0,.12);
+max-width:500px;
 }
 
 .info-card h3{
-font-size:2rem;
+font-size:1.8rem;
 color:#ff7a00;
 margin-bottom:15px;
 }
 
 .info-card p{
-font-size:1.2rem;
+font-size:1.1rem;
 line-height:1.8;
 }
 
 /* =========================
-   SERVICES
+   WAVE
 ========================= */
 
-.services{
-background:#f8f8f8;
-padding:70px 0 50px;
-}
-
-.section-title{
-text-align:center;
-font-size:3rem;
-font-weight:800;
-color:#0f2747;
-margin-bottom:12px;
-}
-
-.section-line{
-width:70px;
-height:5px;
-background:#ff7a00;
-margin:0 auto 50px;
-border-radius:50px;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
-}
-
-<!DOCTYPE html>
-<html lang="pap">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PapiaText</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:'Poppins',sans-serif;
-background:#f7f7f7;
-color:#0f2747;
-overflow-x:hidden;
-}
-
-a{
-text-decoration:none;
-}
-
-/* =========================
-   NAVBAR
-========================= */
-
-.navbar{
-position:fixed;
-top:0;
+.wave{
+position:absolute;
+bottom:0;
 left:0;
 width:100%;
-z-index:999;
-background:rgba(255,255,255,.95);
-backdrop-filter:blur(10px);
-box-shadow:0 2px 15px rgba(0,0,0,.08);
+line-height:0;
 }
 
-.nav-container{
-max-width:1400px;
-margin:auto;
-padding:18px 30px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-.logo-nav{
-font-size:2.2rem;
-font-weight:800;
-color:#0f2747;
-}
-
-.logo-nav span{
-color:#ff7a00;
-}
-
-.nav-menu{
-display:flex;
-gap:40px;
-list-style:none;
-}
-
-.nav-menu a{
-color:#0f2747;
-font-weight:600;
-transition:.3s;
-}
-
-.nav-menu a:hover{
-color:#ff7a00;
-}
-
-.nav-buttons{
-display:flex;
-gap:14px;
-}
-
-.btn-login{
-padding:12px 24px;
-border:2px solid #0f2747;
-border-radius:12px;
-color:#0f2747;
-font-weight:700;
-background:white;
-}
-
-.btn-register{
-padding:12px 24px;
-border-radius:12px;
-background:#ff7a00;
-color:white;
-font-weight:700;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-position:relative;
-min-height:720px;
-padding-top:110px;
-
-background:
-linear-gradient(
-rgba(255,255,255,.12),
-rgba(255,255,255,.20)
-),
-url('images/papiatext-hero-curacao.png');
-
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-}
-
-.container{
-max-width:1400px;
-margin:auto;
-padding:0 40px;
-}
-
-.hero-content{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:60px;
-padding-top:50px;
-}
-
-.hero-left{
-flex:1;
-max-width:700px;
-}
-
-.logo-main{
-font-size:6rem;
-font-weight:800;
-line-height:1;
-color:#0f2747;
-margin-bottom:20px;
-}
-
-.logo-main span{
-color:#ff7a00;
-}
-
-.hero-title{
-font-size:3.2rem;
-font-weight:800;
-line-height:1.15;
-margin-bottom:20px;
-color:#0f2747;
-}
-
-.hero-slogan{
-font-size:1.8rem;
-font-weight:700;
-color:#ff7a00;
-margin-bottom:18px;
-}
-
-.hero-text{
-font-size:1.3rem;
-line-height:1.7;
-max-width:650px;
-margin-bottom:30px;
-}
-
-.btn-contact{
-display:inline-flex;
-align-items:center;
-gap:12px;
-background:#ff7a00;
-color:white;
-padding:18px 30px;
-border-radius:14px;
-font-weight:700;
-font-size:1.1rem;
-box-shadow:0 10px 25px rgba(255,122,0,.30);
-}
-
-.hero-right{
-display:flex;
-justify-content:flex-end;
-align-items:center;
-flex:1;
-}
-
-.info-card{
-background:rgba(255,255,255,.95);
-padding:40px;
-border-radius:24px;
-width:430px;
-box-shadow:0 15px 40px rgba(0,0,0,.15);
-}
-
-.info-card h3{
-font-size:2rem;
-color:#ff7a00;
-margin-bottom:15px;
-}
-
-.info-card p{
-font-size:1.2rem;
-line-height:1.8;
+.wave svg{
+display:block;
+width:100%;
+height:140px;
 }
 
 /* =========================
@@ -470,24 +233,16 @@ line-height:1.8;
 ========================= */
 
 .services{
-background:#f8f8f8;
-padding:70px 0 50px;
+padding:100px 0;
+background:white;
 }
 
 .section-title{
 text-align:center;
 font-size:3rem;
 font-weight:800;
+margin-bottom:60px;
 color:#0f2747;
-margin-bottom:12px;
-}
-
-.section-line{
-width:70px;
-height:5px;
-background:#ff7a00;
-margin:0 auto 50px;
-border-radius:50px;
 }
 
 .cards{
@@ -495,6 +250,233 @@ display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:25px;
 }
+
+.card{
+background:white;
+padding:35px;
+border-radius:25px;
+box-shadow:0 12px 35px rgba(0,0,0,.08);
+transition:.3s;
+text-align:center;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card-icon{
+font-size:3rem;
+margin-bottom:15px;
+}
+
+.card h3{
+font-size:1.4rem;
+margin-bottom:12px;
+color:#0f2747;
+}
+
+.card p{
+color:#4f6480;
+}
+
+
+/* =========================
+   PRONTO
+========================= */
+
+.pronto{
+padding:90px 0;
+background:#fff7f0;
+}
+
+.pronto-box{
+background:linear-gradient(135deg,#ff7a00,#ff9b3d);
+padding:50px;
+border-radius:30px;
+text-align:center;
+color:white;
+box-shadow:0 15px 40px rgba(255,122,0,.25);
+}
+
+.pronto-box h2{
+font-size:2.5rem;
+margin-bottom:15px;
+}
+
+.pronto-box p{
+font-size:1.15rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer-top{
+background:#08192e;
+padding:50px 20px;
+text-align:center;
+}
+
+.footer-top h3{
+color:#ff7a00;
+font-size:1.8rem;
+font-weight:800;
+margin-bottom:10px;
+}
+
+.footer-top p{
+color:white;
+font-size:1.1rem;
+}
+
+footer{
+background:#050f1c;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:1100px){
+
+.hero-content{
+flex-direction:column;
+text-align:center;
+}
+
+.cards{
+grid-template-columns:repeat(2,1fr);
+}
+
+.nav-menu{
+display:none;
+}
+
+}
+
+@media(max-width:768px){
+
+.logo-main{
+font-size:3.5rem;
+}
+
+.hero-title{
+font-size:2.2rem;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.info-card{
+max-width:100%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="nav-container">
+
+<div class="logo-nav">
+Papia<span>Text</span>
+</div>
+
+<ul class="nav-menu">
+<li><a href="#">Kas</a></li>
+<li><a href="#">Kon e ta funshoná</a></li>
+<li><a href="#">Servisionan</a></li>
+<li><a href="#">Pa ken</a></li>
+<li><a href="#">Tarifanan</a></li>
+<li><a href="#">Kontakto</a></li>
+</ul>
+
+<div class="nav-buttons">
+<a href="#" class="btn-login">Drenta</a>
+<a href="#" class="btn-register">Registrá</a>
+</div>
+
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="hero-left">
+
+<h1 class="logo-main">
+Papia<span>Text</span>
+</h1>
+
+<h2 class="hero-title">
+Konvertí audio i video na teksto den Papiamentu.
+</h2>
+
+<p class="hero-slogan">
+Bo palabra. Nos teknologia.
+</p>
+
+<p class="hero-text">
+PapiaText ta un plataforma ku ta konvertí audio i video na teksto den Papiamentu di un manera rápido, presis i simpel.
+</p>
+
+<a href="mailto:info@papiatext.com" class="btn-contact">
+Tuma kontakto ku nos
+</a>
+
+</div>
+
+<div class="hero-right">
+
+<div class="info-card">
+
+<h3>
+Desaroyá pa VeeLady's Entertainment
+</h3>
+
+<p>
+Papiamentu. Teknologia. Inovashon.
+</p>
+
+<p style="margin-top:15px;">
+Kreá spesialmente pa audio, video i karaoke den Papiamentu.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="wave">
+
+<svg xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 1440 320">
+
+<path fill="#ffffff"
+fill-opacity="1"
+d="M0,224L80,208C160,192,320,160,480,160C640,160,800,192,960,192C1120,192,1280,160,1360,144L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
+</path>
+
+</svg>
+
+</div>
+
+</section>
 
 <section class="services">
 
@@ -504,32 +486,62 @@ gap:25px;
 Nos Servisionan
 </h2>
 
-<div class="section-line"></div>
-
 <div class="cards">
 
 <div class="card">
-<div class="card-icon">🎤</div>
+
+<div class="card-icon">
+🎤
+</div>
+
 <h3>Audio</h3>
-<p>Konvertí audio na teksto.</p>
+
+<p>
+Konvertí audio na teksto.
+</p>
+
 </div>
 
 <div class="card">
-<div class="card-icon">🎥</div>
+
+<div class="card-icon">
+🎥
+</div>
+
 <h3>Video</h3>
-<p>Konvertí video na teksto.</p>
+
+<p>
+Konvertí video na teksto.
+</p>
+
 </div>
 
 <div class="card">
-<div class="card-icon">🎵</div>
+
+<div class="card-icon">
+🎵
+</div>
+
 <h3>Karaoke</h3>
-<p>Ekstraé teksto for di videonan di karaoke.</p>
+
+<p>
+Ekstraé teksto for di videonan di karaoke.
+</p>
+
 </div>
 
 <div class="card">
-<div class="card-icon">📄</div>
+
+<div class="card-icon">
+📄
+</div>
+
 <h3>Teksto</h3>
-<p>Deskargá òf kopia bo teksto.</p>
+
+<p>
+Deskargá òf kopia bo teksto.
+</p>
+
 </div>
 
 </div>
@@ -544,21 +556,13 @@ Nos Servisionan
 
 <div class="pronto-box">
 
-<div class="pronto-icon">
-🚀
-</div>
-
-<div class="pronto-text">
-
 <h2>
-Pronto Disponibel
+🚀 Pronto Disponibel
 </h2>
 
 <p>
 Subí bo audio òf video pa konvertí esaki na teksto den Papiamentu.
 </p>
-
-</div>
 
 </div>
 
