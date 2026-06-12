@@ -6,6 +6,8 @@
 
 <title>PapiaText</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 
 *{
@@ -14,179 +16,304 @@ padding:0;
 box-sizing:border-box;
 }
 
-body{
-font-family:Arial, Helvetica, sans-serif;
-color:#0f2747;
-line-height:1.6;
-background:#fffaf5;
+html{
+scroll-behavior:smooth;
 }
 
+body{
+font-family:'Poppins',sans-serif;
+background:#fff;
+color:#0f2747;
+overflow-x:hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:999;
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(10px);
+box-shadow:0 4px 20px rgba(0,0,0,.08);
+}
+
+.nav-container{
+max-width:1300px;
+margin:auto;
+padding:16px 25px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo-nav{
+font-size:2rem;
+font-weight:800;
+color:#0f2747;
+}
+
+.logo-nav span{
+color:#ff7a00;
+}
+
+.nav-menu{
+display:flex;
+gap:28px;
+list-style:none;
+}
+
+.nav-menu a{
+text-decoration:none;
+font-weight:600;
+color:#0f2747;
+transition:.3s;
+}
+
+.nav-menu a:hover{
+color:#ff7a00;
+}
+
+.nav-buttons{
+display:flex;
+gap:12px;
+}
+
+.btn-login{
+padding:10px 18px;
+border:2px solid #0f2747;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+color:#0f2747;
+}
+
+.btn-register{
+padding:10px 18px;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+background:#ff7a00;
+color:white;
+}
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+position:relative;
+padding-top:100px;
+
 background:
 linear-gradient(
-rgba(255,248,240,.55),
-rgba(255,248,240,.70)
+rgba(255,248,240,.65),
+rgba(255,248,240,.75)
 ),
-url("https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=1800&q=80");
+url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=2000&q=80');
+
 background-size:cover;
 background-position:center;
-padding:80px 0 120px;
-position:relative;
 }
 
 .container{
-width:90%;
-max-width:1200px;
+max-width:1300px;
 margin:auto;
+padding:0 25px;
 }
 
 .hero-content{
 display:flex;
-flex-wrap:wrap;
 align-items:center;
 justify-content:space-between;
-gap:50px;
+gap:60px;
 }
 
 .hero-left{
 flex:1;
-min-width:320px;
 }
 
 .hero-right{
 flex:1;
-min-width:320px;
+display:flex;
+justify-content:center;
 }
 
-.logo{
-font-size:5rem;
-font-weight:900;
-color:#0f2747;
-margin-bottom:20px;
-}
-
-.logo span{
-color:#ff7a00;
-}
-
-.subtitle{
-font-size:3rem;
+.logo-main{
+font-size:5.5rem;
 font-weight:800;
-line-height:1.2;
+line-height:1;
 margin-bottom:20px;
+color:#0f2747;
 }
 
-.slogan{
-font-size:1.8rem;
-font-weight:bold;
+.logo-main span{
+color:#ff7a00;
+}
+
+.hero-title{
+font-size:3.2rem;
+font-weight:800;
+line-height:1.15;
+margin-bottom:20px;
+max-width:700px;
+}
+
+.hero-slogan{
+font-size:1.5rem;
+font-weight:700;
 color:#ff7a00;
 margin-bottom:20px;
 }
 
-.intro{
-font-size:1.2rem;
+.hero-text{
+font-size:1.15rem;
 max-width:650px;
+line-height:1.8;
 margin-bottom:30px;
 }
 
-.button{
+.btn-contact{
 display:inline-block;
-background:#0f2747;
+padding:16px 30px;
+background:#ff7a00;
 color:white;
-padding:16px 34px;
-border-radius:12px;
 text-decoration:none;
-font-weight:bold;
-font-size:1.1rem;
+font-weight:700;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(255,122,0,.30);
 }
 
-.button:hover{
-background:#173d6b;
-}
-
-.info-box{
+.info-card{
 background:rgba(255,255,255,.95);
-padding:35px;
-border-radius:25px;
-box-shadow:0 15px 35px rgba(0,0,0,.12);
+padding:40px;
+border-radius:28px;
+box-shadow:0 15px 40px rgba(0,0,0,.12);
+max-width:500px;
 }
 
-.info-box h3{
-color:#ff7a00;
+.info-card h3{
 font-size:1.8rem;
+color:#ff7a00;
 margin-bottom:15px;
 }
 
-.info-box p{
-font-size:1.15rem;
+.info-card p{
+font-size:1.1rem;
+line-height:1.8;
 }
 
+/* =========================
+   WAVE
+========================= */
+
+.wave{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+line-height:0;
+}
+
+.wave svg{
+display:block;
+width:100%;
+height:140px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
 .services{
-background:#fff;
-padding:70px 0;
+padding:100px 0;
+background:white;
 }
 
 .section-title{
 text-align:center;
 font-size:3rem;
-margin-bottom:50px;
+font-weight:800;
+margin-bottom:60px;
 color:#0f2747;
 }
 
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+grid-template-columns:repeat(4,1fr);
 gap:25px;
 }
 
 .card{
 background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+padding:35px;
+border-radius:25px;
+box-shadow:0 12px 35px rgba(0,0,0,.08);
 transition:.3s;
+text-align:center;
 }
 
 .card:hover{
-transform:translateY(-6px);
+transform:translateY(-8px);
+}
+
+.card-icon{
+font-size:3rem;
+margin-bottom:15px;
 }
 
 .card h3{
-font-size:1.5rem;
-margin-bottom:10px;
+font-size:1.4rem;
+margin-bottom:12px;
 color:#0f2747;
 }
 
 .card p{
-font-size:1.05rem;
+color:#4f6480;
 }
 
+
+/* =========================
+   PRONTO
+========================= */
+
 .pronto{
-padding:70px 0;
-background:#fffaf5;
+padding:90px 0;
+background:#fff7f0;
 }
 
 .pronto-box{
-background:white;
+background:linear-gradient(135deg,#ff7a00,#ff9b3d);
 padding:50px;
-border-radius:25px;
+border-radius:30px;
 text-align:center;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+color:white;
+box-shadow:0 15px 40px rgba(255,122,0,.25);
 }
 
 .pronto-box h2{
-color:#ff7a00;
 font-size:2.5rem;
 margin-bottom:15px;
 }
 
 .pronto-box p{
-font-size:1.2rem;
+font-size:1.15rem;
 }
 
+/* =========================
+   FOOTER
+========================= */
+
 .footer-top{
-background:#0f2747;
-padding:25px;
+background:#08192e;
+padding:50px 20px;
 text-align:center;
 }
 
@@ -194,140 +321,93 @@ text-align:center;
 color:#ff7a00;
 font-size:1.8rem;
 font-weight:800;
-margin-bottom:8px;
+margin-bottom:10px;
 }
 
 .footer-top p{
 color:white;
-font-size:1.15rem;
+font-size:1.1rem;
 }
 
 footer{
-background:#08192e;
-padding:25px;
-text-align:center;
+background:#050f1c;
 color:white;
-font-size:1rem;
-}
-.navbar{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-background:rgba(255,255,255,.95);
-backdrop-filter:blur(10px);
-z-index:1000;
-box-shadow:0 2px 15px rgba(0,0,0,.08);
+text-align:center;
+padding:25px;
 }
 
-.nav-container{
-max-width:1200px;
-margin:auto;
-padding:15px 20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:1100px){
+
+.hero-content{
+flex-direction:column;
+text-align:center;
 }
 
-.nav-logo{
-font-size:2rem;
-font-weight:900;
-color:#0f2747;
-}
-
-.nav-logo span{
-color:#ff7a00;
+.cards{
+grid-template-columns:repeat(2,1fr);
 }
 
 .nav-menu{
-display:flex;
-gap:25px;
-list-style:none;
+display:none;
 }
 
-.nav-menu a{
-text-decoration:none;
-color:#0f2747;
-font-weight:600;
 }
 
-.nav-buttons{
-display:flex;
-gap:10px;
-}
-
-.login-btn{
-padding:10px 18px;
-border:2px solid #0f2747;
-border-radius:10px;
-text-decoration:none;
-color:#0f2747;
-font-weight:bold;
-}
-
-.register-btn{
-padding:10px 18px;
-background:#ff7a00;
-color:white;
-border-radius:10px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.hero{
-padding-top:150px;
-}
 @media(max-width:768px){
 
-.logo{
+.logo-main{
 font-size:3.5rem;
 }
 
-.subtitle{
-font-size:2rem;
+.hero-title{
+font-size:2.2rem;
 }
 
-.hero-content{
-text-align:center;
+.cards{
+grid-template-columns:1fr;
 }
 
-.hero-left,
-.hero-right{
-width:100%;
+.info-card{
+max-width:100%;
 }
 
 }
 
-</style>
-</head>
-
-<body>
 </style>
 </head>
 
 <body>
 
 <nav class="navbar">
-  <div class="nav-container">
-    <div class="nav-logo">Papia<span>Text</span></div>
 
-    <ul class="nav-menu">
-      <li><a href="#">Kas</a></li>
-      <li><a href="#">Kon e ta funshoná</a></li>
-      <li><a href="#">Servisionan</a></li>
-      <li><a href="#">Pa ken</a></li>
-      <li><a href="#">Tarifanan</a></li>
-      <li><a href="#">Kontakto</a></li>
-    </ul>
+<div class="nav-container">
 
-    <div class="nav-buttons">
-      <a href="#" class="login-btn">Drenta</a>
-      <a href="#" class="register-btn">Registrá</a>
-    </div>
-  </div>
+<div class="logo-nav">
+Papia<span>Text</span>
+</div>
+
+<ul class="nav-menu">
+<li><a href="#">Kas</a></li>
+<li><a href="#">Kon e ta funshoná</a></li>
+<li><a href="#">Servisionan</a></li>
+<li><a href="#">Pa ken</a></li>
+<li><a href="#">Tarifanan</a></li>
+<li><a href="#">Kontakto</a></li>
+</ul>
+
+<div class="nav-buttons">
+<a href="#" class="btn-login">Drenta</a>
+<a href="#" class="btn-register">Registrá</a>
+</div>
+
+</div>
+
 </nav>
 
-<section class="hero">
 <section class="hero">
 
 <div class="container">
@@ -336,21 +416,23 @@ width:100%;
 
 <div class="hero-left">
 
-<h1 class="logo">Papia<span>Text</span></h1>
+<h1 class="logo-main">
+Papia<span>Text</span>
+</h1>
 
-<h2 class="subtitle">
+<h2 class="hero-title">
 Konvertí audio i video na teksto den Papiamentu.
 </h2>
 
-<p class="slogan">
+<p class="hero-slogan">
 Bo palabra. Nos teknologia.
 </p>
 
-<p class="intro">
+<p class="hero-text">
 PapiaText ta un plataforma ku ta konvertí audio i video na teksto den Papiamentu di un manera rápido, presis i simpel.
 </p>
 
-<a href="mailto:info@papiatext.com" class="button">
+<a href="mailto:info@papiatext.com" class="btn-contact">
 Tuma kontakto ku nos
 </a>
 
@@ -358,15 +440,17 @@ Tuma kontakto ku nos
 
 <div class="hero-right">
 
-<div class="info-box">
+<div class="info-card">
 
-<h3>Desaroyá pa VeeLady's Entertainment</h3>
+<h3>
+Desaroyá pa VeeLady's Entertainment
+</h3>
 
 <p>
 Papiamentu. Teknologia. Inovashon.
 </p>
 
-<p style="margin-top:12px;">
+<p style="margin-top:15px;">
 Kreá spesialmente pa audio, video i karaoke den Papiamentu.
 </p>
 
@@ -378,34 +462,86 @@ Kreá spesialmente pa audio, video i karaoke den Papiamentu.
 
 </div>
 
+<div class="wave">
+
+<svg xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 1440 320">
+
+<path fill="#ffffff"
+fill-opacity="1"
+d="M0,224L80,208C160,192,320,160,480,160C640,160,800,192,960,192C1120,192,1280,160,1360,144L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
+</path>
+
+</svg>
+
+</div>
+
 </section>
 
 <section class="services">
 
 <div class="container">
 
-<h2 class="section-title">Nos Servisionan</h2>
+<h2 class="section-title">
+Nos Servisionan
+</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>🎤 Audio</h3>
-<p>Konvertí audio na teksto.</p>
+
+<div class="card-icon">
+🎤
+</div>
+
+<h3>Audio</h3>
+
+<p>
+Konvertí audio na teksto.
+</p>
+
 </div>
 
 <div class="card">
-<h3>🎥 Video</h3>
-<p>Konvertí video na teksto.</p>
+
+<div class="card-icon">
+🎥
+</div>
+
+<h3>Video</h3>
+
+<p>
+Konvertí video na teksto.
+</p>
+
 </div>
 
 <div class="card">
-<h3>🎵 Karaoke</h3>
-<p>Ekstraé teksto for di videonan di karaoke.</p>
+
+<div class="card-icon">
+🎵
+</div>
+
+<h3>Karaoke</h3>
+
+<p>
+Ekstraé teksto for di videonan di karaoke.
+</p>
+
 </div>
 
 <div class="card">
-<h3>📄 Teksto</h3>
-<p>Deskargá òf kopia bo teksto.</p>
+
+<div class="card-icon">
+📄
+</div>
+
+<h3>Teksto</h3>
+
+<p>
+Deskargá òf kopia bo teksto.
+</p>
+
 </div>
 
 </div>
@@ -420,7 +556,9 @@ Kreá spesialmente pa audio, video i karaoke den Papiamentu.
 
 <div class="pronto-box">
 
-<h2>🚀 Pronto Disponibel</h2>
+<h2>
+🚀 Pronto Disponibel
+</h2>
 
 <p>
 Subí bo audio òf video pa konvertí esaki na teksto den Papiamentu.
