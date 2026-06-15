@@ -1,1 +1,559 @@
+papiatext-transcribe
+
+
+codico:
+export default {
+  async fetch(request, env) {
+
+    if (request.method !== "POST") {
+      return new Response(
+        JSON.stringify({
+          message: "PapiaText Upload Endpoint OK"
+        }),
+        {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+    }
+
+    try {
+
+      const formData = await request.formData();
+      const file = formData.get("file");
+
+      if (!file) {
+        return new Response(
+          JSON.stringify({
+            error: "No file uploaded"
+          }),
+          {
+            status: 400,
+            headers: {
+              "Content-Type": "application/json"
+            }
+          }
+        );
+      }
+
+      return new Response(
+        JSON.stringify({
+          success: true,
+          filename: file.name,
+          type: file.type,
+          size: file.size
+        }),
+        {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+
+    } catch (error) {
+
+      return new Response(
+        JSON.stringify({
+          error: error.message
+        }),
+        {
+          status: 500,
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+
+    }
+
+  }
+};
+
+
+index.html:
+
+<!DOCTYPE html>
+<html lang="pap">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PapiaText</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#f7f7f7;
+color:#0f2747;
+overflow-x:hidden;
+}
+
+a{text-decoration:none;}
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(10px);
+z-index:999;
+box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+
+.nav-container{
+max-width:1400px;
+margin:auto;
+padding:18px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo-nav{
+font-size:2rem;
+font-weight:800;
+}
+
+.logo-nav span{
+color:#ff7a00;
+}
+
+.nav-menu{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+.nav-menu a{
+color:#0f2747;
+font-weight:600;
+}
+
+.nav-buttons{
+display:flex;
+gap:12px;
+}
+
+.btn-login{
+padding:10px 20px;
+border:2px solid #0f2747;
+border-radius:10px;
+color:#0f2747;
+font-weight:700;
+}
+
+.btn-register{
+padding:10px 20px;
+background:#ff7a00;
+border-radius:10px;
+color:white;
+font-weight:700;
+}
+
+.hero{
+min-height:100vh;
+padding-top:120px;
+
+background:
+linear-gradient(
+rgba(255,255,255,.60),
+rgba(255,255,255,.70)
+),
+
+url('papiatext-hero-curacao.png');
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+.container{
+max-width:1400px;
+margin:auto;
+padding:0 40px;
+}
+
+.hero-content{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:60px;
+}
+
+.hero-left{
+flex:1;
+}
+
+.logo-main{
+font-size:5.5rem;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.logo-main span{
+color:#ff7a00;
+}
+
+.hero-title{
+font-size:3rem;
+font-weight:800;
+line-height:1.2;
+margin-bottom:20px;
+color:#08244a;
+text-shadow:0 2px 8px rgba(255,255,255,.5);
+}
+
+.hero-slogan{
+font-size:1.5rem;
+font-weight:700;
+color:#ff7a00;
+margin-bottom:15px;
+}
+
+.hero-text{
+font-size:1.2rem;
+max-width:650px;
+margin-bottom:25px;
+color:#08244a;
+font-weight:500;
+}
+
+.btn-contact{
+display:inline-block;
+background:#ff7a00;
+color:white;
+padding:16px 30px;
+border-radius:12px;
+font-weight:700;
+}
+
+.info-card{
+background:rgba(255,255,255,.95);
+padding:35px;
+border-radius:25px;
+max-width:450px;
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.info-card h3{
+color:#ff7a00;
+margin-bottom:15px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+padding:50px 0 60px;
+background:transparent;
+}
+
+.section-title{
+text-align:center;
+font-size:2.8rem;
+font-weight:800;
+color:#0f2747;
+margin-bottom:10px;
+}
+
+.section-line{
+width:80px;
+height:5px;
+background:#ff7a00;
+margin:0 auto 50px;
+border-radius:50px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+margin-bottom:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+min-height:240px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card-icon{
+font-size:3rem;
+margin-bottom:15px;
+}
+
+.card h3{
+font-size:1.6rem;
+margin-bottom:10px;
+color:#0f2747;
+}
+
+.card p{
+font-size:1.05rem;
+line-height:1.6;
+}
+
+/* =========================
+   FOOTER TOP
+========================= */
+
+.footer-top{
+background:#f6eed2 !important;
+padding:60px 20px !important;
+text-align:center !important;
+}
+
+.footer-top h3{
+color:#000 !important;
+font-size:3rem !important;
+font-weight:800 !important;
+margin-bottom:20px !important;
+}
+
+.footer-top p{
+color:#000 !important;
+font-size:1.4rem !important;
+font-weight:700 !important;
+line-height:1.7 !important;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+background:#ececec !important;
+color:#000 !important;
+text-align:center !important;
+padding:25px !important;
+font-size:1.1rem !important;
+font-weight:700 !important;
+}
+
+@media(max-width:900px){
+
+.hero-content{
+flex-direction:column;
+text-align:center;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.nav-menu{
+display:none;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="nav-container">
+
+<div class="logo-nav">
+Papia<span>Text</span>
+</div>
+
+<ul class="nav-menu">
+<li><a href="#">Kas</a></li>
+<li><a href="#">Kon e ta funshoná</a></li>
+<li><a href="#">Servisionan</a></li>
+<li><a href="#">Pa ken</a></li>
+<li><a href="#">Tarifanan</a></li>
+<li><a href="#">Kontakto</a></li>
+</ul>
+
+<div class="nav-buttons">
+<a href="#" class="btn-login">Drenta</a>
+<a href="#" class="btn-register">Registrá</a>
+</div>
+
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="hero-left">
+
+<h1 class="logo-main">
+Papia<span>Text</span>
+</h1>
+
+<h2 class="hero-title">
+Konvertí audio i video na teksto den Papiamentu.
+</h2>
+
+<p class="hero-slogan">
+Bo palabra. Nos teknologia.
+</p>
+
+<p class="hero-text">
+PapiaText ta un plataforma ku ta konvertí audio i video na teksto den Papiamentu di un manera rápido, presis i simpel.
+</p>
+
+<a href="mailto:info@papiatext.com" class="btn-contact">
+Tuma kontakto ku nos
+</a>
+
+</div>
+
+<div class="hero-right">
+
+<div class="info-card">
+
+<h3>
+Spesialmente pa Transkripshon na Papiamentu
+</h3>
+
+<p>
+Teknologia moderno pa transkribí audio i video den Papiamentu ku un nivel haltu di presishon.
+</p>
+
+<p style="margin-top:12px;">
+Diseñá pa profesionalnan, organisashonnan i kreado di kontenido.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<section class="services">
+
+<div class="container">
+
+<h2 class="section-title">
+Nos Servisionan
+</h2>
+
+<div class="section-line"></div>
+
+<div class="cards">
+
+<div class="card">
+<div class="card-icon">🎤</div>
+<h3>Audio</h3>
+<p>Konvertí audio na teksto ku presishon haltu.</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🎥</div>
+<h3>Video</h3>
+<p>Transkribí video na teksto den Papiamentu.</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🎵</div>
+<h3>Karaoke</h3>
+<p>Ekstraé i editá letra for di videonan.</p>
+</div>
+
+<div class="card">
+<div class="card-icon">📄</div>
+<h3>Teksto</h3>
+<p>Deskargá, kopia òf usa bo resultado mesora.</p>
+</div>
+
+</div>
+
+<div class="coming-soon">
+
+<h2>🚀 Pronto Disponibel</h2>
+
+<p>
+Subí bo audio òf video pa konvertí esaki direktamente na teksto den Papiamentu.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="footer-top">
+
+<h3>Papiamentu. Teknologia. Inovashon.</h3>
+
+<p>
+Kreá spesialmente pa audio, video i transkripshon den Papiamentu.
+</p>
+
+</div>
+
+<footer>
+
+© 2026 PapiaText • Desaroyá pa VeeLady's Entertainment
+
+</footer>
+
+</body>
+</html>
+```
+
+</body>
+</html>
+
+
+CODICO AKTUAL:
+
+export default {
+  async fetch(request, env) {
+
+    if (!env.OPENAI_API_KEY) {
+      return new Response(
+        JSON.stringify({
+          error: "OPENAI_API_KEY no ta disponible"
+        }),
+        {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+    }
+
+    return new Response(
+      JSON.stringify({
+        success: true,
+        message: "OPENAI_API_KEY ta conecta"
+      }),
+      {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    );
+
+  }
+};
+
+
+
 
