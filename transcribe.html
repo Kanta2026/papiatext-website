@@ -232,8 +232,24 @@ document.getElementById("result").value = "";
 }
 
 });
+if (response.ok) {
 
-</script></body>
+document.getElementById("fullLearnStatus").innerHTML =
+"✅ Full correction wardá.";
 
+document.getElementById("fullCorrection").value = "";
+document.getElementById("result").value = "";
+
+}
+
+}
+catch(error){
+
+document.getElementById("fullLearnStatus").innerHTML =
+"❌ Error: " + error.message;
+
+}
+
+});
 </script></body>
 </html>
