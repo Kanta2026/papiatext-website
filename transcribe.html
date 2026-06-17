@@ -222,18 +222,12 @@ corrected
 );
 
 if (response.ok) {
+
 document.getElementById("fullLearnStatus").innerHTML =
 "✅ Full correction wardá.";
-} else {
-document.getElementById("fullLearnStatus").innerHTML =
-"❌ Error wardando.";
-}
 
-}
-catch(error){
-
-document.getElementById("fullLearnStatus").innerHTML =
-"❌ Error: " + error.message;
+document.getElementById("fullCorrection").value = "";
+document.getElementById("result").value = "";
 
 }
 
