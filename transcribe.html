@@ -201,8 +201,10 @@ const corrected =
 document.getElementById("fullCorrection").value.trim();
 
 if (!original || !corrected) {
+
 alert("Tin mester un transcripción i un korekshon kompletu.");
 return;
+
 }
 
 try {
@@ -229,16 +231,10 @@ document.getElementById("fullLearnStatus").innerHTML =
 document.getElementById("fullCorrection").value = "";
 document.getElementById("result").value = "";
 
-}
-
-});
-if (response.ok) {
+} else {
 
 document.getElementById("fullLearnStatus").innerHTML =
-"✅ Full correction wardá.";
-
-document.getElementById("fullCorrection").value = "";
-document.getElementById("result").value = "";
+"❌ Error wardando.";
 
 }
 
