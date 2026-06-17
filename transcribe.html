@@ -88,7 +88,14 @@ placeholder="Korekshon korekto">
 
 <button id="saveCorrectionBtn">
 💾 Save Correction
-</button><p id="learnStatus"></p></div></div><script>
+</button><p id="learnStatus"></p>
+<hr style="margin:30px 0;"><h3>📚 Full Correction Training</h3><textarea
+id="fullCorrection"
+placeholder="Kopia e resultado, koregí esey, i pega e versión final aki..."
+style="height:250px;"></textarea><button id="saveFullCorrectionBtn">
+💾 Save Full Correction
+</button><p id="fullLearnStatus"></p>
+</div></div><script>
 
 document.getElementById("transcribeBtn").addEventListener("click", async () => {
 
@@ -184,6 +191,55 @@ document.getElementById("learnStatus").innerHTML =
 }
 
 });
+
+document.getElementById("saveFullCorrectionBtn").addEventListener("click", async () => {
+
+const original =
+document.getElementById("result").value.trim();
+
+const corrected =
+document.getElementById("fullCorrection").value.trim();
+
+if (!original || !corrected) {
+alert("Tin mester un transcripción i un korekshon kompletu.");
+return;
+}
+
+try {
+
+const response = await fetch(
+"https://papiatext-transcribe.info-victoryhousing.workers.dev/learn-full",
+{
+method: "POST",
+headers: {
+"Content-Type": "application/json"
+},
+body: JSON.stringify({
+original,
+corrected
+})
+}
+);
+
+if (response.ok) {
+document.getElementById("fullLearnStatus").innerHTML =
+"✅ Full correction wardá.";
+} else {
+document.getElementById("fullLearnStatus").innerHTML =
+"❌ Error wardando.";
+}
+
+}
+catch(error){
+
+document.getElementById("fullLearnStatus").innerHTML =
+"❌ Error: " + error.message;
+
+}
+
+});
+
+</script></body>
 
 </script></body>
 </html>
