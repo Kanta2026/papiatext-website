@@ -69,18 +69,25 @@ font-size:1rem;
 border-radius:10px;
 border:1px solid #ddd;
 resize:vertical;
-}
-</style></head><body><div class="container"><div class="logo">
+}</style>
+</head><body><div class="container"><div class="logo">
 Papia<span>Text</span>
 </div><div class="subtitle">
-Transkribí audio na teksto den Papiamentu
-</div><div class="card"><input type="file" id="audioFile" accept="audio/*,video/*,.mp3,.wav,.m4a,.aac,.ogg,.flac,.mpeg,.mp4,.mov,.avi,.mkv,.webm"><button id="transcribeBtn">
+Transkribí audio i video na teksto den Papiamentu
+</div><div class="card"><input
+type="file"
+id="mediaFile"
+accept="audio/*,video/*,.mp3,.mpeg,.wav,.m4a,.aac,.ogg,.flac,.mp4,.mov,.avi,.mkv,.webm">
+
+<button id="transcribeBtn">
 Transcribe
-</button><textarea id="result" placeholder="Resultado lo aparece aki..."></textarea><hr style="margin:30px 0;"><h3>🎓 Train PapiaText</h3><input
+</button><textarea
+id="result"
+placeholder="Resultado lo aparece aki...">
+</textarea><hr style="margin:30px 0;"><h3>🎓 Train PapiaText</h3><input
 type="text"
 id="wrongWord"
 placeholder="Palabra/frase mal reconosí">
-
 <input
 type="text"
 id="correctWord"
@@ -100,7 +107,7 @@ style="height:250px;"></textarea><button id="saveFullCorrectionBtn">
 document.getElementById("transcribeBtn").addEventListener("click", async () => {
 
 const fileInput =
-document.getElementById("audioFile");
+document.getElementById("mediafile");
 
 if (!fileInput.files.length) {
 alert("Selektá un audio promé.");
